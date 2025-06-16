@@ -16,14 +16,24 @@ const mangas = [
     },
     {
         id: 2,
-        img: "	https://meo.comick.pictures/0GRgd-m.jpg",
+        img: "https://meo.comick.pictures/0GRgd-m.jpg",
         title: "Solo Leveling",
         author: "Chu Gong",
+    },
+    {
+        id: 3,
+        img: "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2022/09/FdfvBeZVIAAraf_.jpg",
+        title: "Jujutsu Kaisen",
+        author: "Gege Akutami",
     },
 ];
 
 app.get("/", (req, res, next) => {
     res.render("home", { mangas: mangas });
+});
+
+app.get("/authors", (req, res, next) => {
+    res.render("authors", { mangas: mangas });
 });
 
 app.listen(process.env.PORT, () => {

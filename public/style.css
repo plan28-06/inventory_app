@@ -96,3 +96,94 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.overlay-buttons {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.update,
+.del {
+    background-color: transparent;
+    border-radius: 0.375rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    width: fit-content;
+    padding: 5px 10px;
+
+    color: #5cda95;
+    border: 1px solid #5cda95;
+}
+
+.del {
+    color: #e86c80;
+    border: 1px solid #e86c80;
+}
+
+.update:hover {
+    background-color: #5cda95;
+    color: white;
+}
+
+.del:hover {
+    background-color: #e86c80;
+    color: white;
+}
+
+.overlay-buttons {
+    display: none;
+}
+
+.actualcard:hover .overlay-buttons {
+    display: flex;
+}
+/* .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #0070f3;
+    border: 1px solid #0070f3;
+    padding: 5px 10px;
+    font-size: 20px;
+    width: fit-content;
+    margin-top: 5px;
+} */
+
+.authors-container{
+    padding: 30px 45px;
+    display: flex;
+    gap: 30px;  
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.authora > button {
+    padding: 5px 10px;
+    font-size: 25px;
+    width: fit-content;
+    margin-top: 5px;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 0.375rem;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+}

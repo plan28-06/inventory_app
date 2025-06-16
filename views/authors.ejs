@@ -1,0 +1,11 @@
+<%- include("./partials/head") %>
+<body>
+    <header><%- include("./partials/nav") %></header>
+    <div class="authors-container">
+        <% mangas.forEach((manga)=>{%>
+        <a href="/<%=manga.author%>" class="authora">
+            <button class="authorbutton"><%=manga.author%></button>
+        </a>
+        <%})%>
+    </div>
+</body>

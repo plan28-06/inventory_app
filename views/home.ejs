@@ -4,6 +4,12 @@
     <div class="card-container">
         <% mangas.forEach((manga)=>{%>
         <div class="card-<%=manga.id%> actualcard">
+            <div class="overlay-buttons">
+                <button class="update">Update</button>
+                <form action="/delete/<%=manga.id%>" method="post">
+                    <button class="del">Delete</button>
+                </form>
+            </div>
             <img src="<%=manga.img%>" alt="<%=manga.title%>" />
             <div class="mangacardcontent">
                 <h2><%=manga.title%></h2>
