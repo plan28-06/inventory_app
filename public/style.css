@@ -45,6 +45,11 @@ a > h1 {
     margin-top: 5px;
 }
 
+.btn:hover{
+    color: white;
+    background-color: #0070f3;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
