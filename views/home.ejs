@@ -1,7 +1,14 @@
 <%- include("./partials/head") %>
 <body>
-    <header>
-        <%- include("./partials/nav") %>
-    </header>
-    
+    <header><%- include("./partials/nav") %></header>
+    <div class="card-container">
+        <% mangas.forEach((manga)=>{%>
+        <div class="card-<%=manga.id%> actualcard">
+            <img src="<%=manga.img%>" alt="<%=manga.title%>" />
+            <div class="mangacardcontent">
+                <h2><%=manga.title%></h2>
+            </div>
+        </div>
+        <%})%>
+    </div>
 </body>
