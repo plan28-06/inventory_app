@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const { body, validationResult } = require("express-validator");
 const db = require("./db/queries");
 
 app.set("views", path.join(__dirname, "views"));
@@ -47,6 +48,26 @@ app.get("/authors/:author", async (req, res, next) => {
     res.render("mangasbyauthor", { mangas: mangas });
 });
 
+app.get("/manga/create", (req, res, next) => {
+    res.render("form");
+});
+
+app.post(
+    "/manga/create",
+    body("img").isURL().withMessage("Image must be a valid URL"),
+    (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render("404");
+        }
+        console.log(res.body);
+    }
+);
+
+app.use((req, res) => {
+    res.status(404).render("404"); 
+});
+  
 app.listen(process.env.PORT, () => {
     console.log(`Listening to PORT ${process.env.PORT}`);
 });

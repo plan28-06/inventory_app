@@ -1,0 +1,25 @@
+<%- include("./partials/head") %>
+<body>
+    <header><%- include("./partials/nav") %></header>
+    <div class="formdiv">
+        <form action="/manga/create" method="post">
+            <h2 style="font-size: 24px">Add Manga</h2>
+            <br />
+            <div class="formtitle">
+                <label for="Title">Title</label>
+                <input type="text" name="title" required />
+            </div>
+            <div class="formauthor">
+                <label for="author">Author</label>
+                <input type="text" name="author" required />
+            </div>
+            <div class="imgurl">
+                <label for="img">Img URL</label>
+                <input type="text" name="img" required />
+            </div>
+            <div class="sbtn">
+                <button type="submit" class="submitbtn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
