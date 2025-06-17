@@ -70,6 +70,15 @@ app.post("/delete/:id", async (req, res, next) => {
     res.redirect("/");
 });
 
+app.get("/update/:id", (req, res, next) => {
+    res.render("updateform", { id: req.params.id });
+});
+
+app.post("/update/:id", async (req, res, next) => {
+    await db.updatemanga(req.body, req.params.id);
+    res.redirect("/");
+});
+
 app.use((req, res) => {
     res.status(404).render("404");
 });

@@ -5,7 +5,9 @@
         <% mangas.forEach((manga)=>{%>
         <div class="card-<%=manga.id%> actualcard">
             <div class="overlay-buttons">
-                <button class="update">Update</button>
+                <a href="/update/<%=manga.id%>">
+                    <button class="update">Update</button>
+                </a>
                 <form action="/delete/<%=manga.id%>" method="post">
                     <button class="del" type="submit">Delete</button>
                 </form>

@@ -24,9 +24,17 @@ async function deletemanga(id) {
     await pool.query("delete from mangas where id = $1;", [id]);
 }
 
+async function updatemanga(manga, id) {
+    await pool.query(
+        "update mangas set img=$1 , title=$2 , author = $3 where id=$4;",
+        [manga.img, manga.title, manga.author, id]
+    );
+}
+
 module.exports = {
     getallmangas,
     getmangasbyauthor,
     createnewmanga,
     deletemanga,
+    updatemanga,
 };
