@@ -20,4 +20,13 @@ async function createnewmanga(manga) {
     );
 }
 
-module.exports = { getallmangas, getmangasbyauthor, createnewmanga };
+async function deletemanga(id) {
+    await pool.query("delete from mangas where id = $1;", [id]);
+}
+
+module.exports = {
+    getallmangas,
+    getmangasbyauthor,
+    createnewmanga,
+    deletemanga,
+};

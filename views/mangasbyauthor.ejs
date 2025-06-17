@@ -1,6 +1,9 @@
 <%- include("./partials/head") %>
 <body>
     <header><%- include("./partials/nav") %></header>
+    <div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
+        <h2 style="color: white;"><%= mangas[0].author%>'s Works</h2>
+    </div>
     <div class="card-container">
         <% mangas.forEach((manga)=>{%>
         <div class="card-<%=manga.id%> actualcard">
