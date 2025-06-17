@@ -55,19 +55,20 @@ app.get("/manga/create", (req, res, next) => {
 app.post(
     "/manga/create",
     body("img").isURL().withMessage("Image must be a valid URL"),
-    (req, res, next) => {
+    async (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render("404");
+            res.render("invalidurl.ejs").status(500);
         }
-        console.log(res.body);
+        await db.createnewmanga(req.body);
+        res.redirect("/");
     }
 );
 
 app.use((req, res) => {
-    res.status(404).render("404"); 
+    res.status(404).render("404");
 });
-  
+
 app.listen(process.env.PORT, () => {
     console.log(`Listening to PORT ${process.env.PORT}`);
 });

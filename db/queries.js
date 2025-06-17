@@ -13,4 +13,11 @@ async function getmangasbyauthor(author) {
     return rows;
 }
 
-module.exports = { getallmangas, getmangasbyauthor };
+async function createnewmanga(manga) {
+    await pool.query(
+        "INSERT INTO mangas (img,title,author) VALUES ($1,$2,$3);",
+        [manga.img, manga.title, manga.author]
+    );
+}
+
+module.exports = { getallmangas, getmangasbyauthor, createnewmanga };
